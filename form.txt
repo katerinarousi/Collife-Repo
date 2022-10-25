@@ -17,3 +17,50 @@
 - Δημιουργία chat μεταξύ φοιτητών με κοινά γνωρίσματα - ενδιαφέροντα.
 - Ανταλλαγή απόψεων που αφορούν την πανεπιστημιακή ζωή.
 - Διατύπωση ερωτήσεων σχετικά με πολλαπλά θέματα.
+
+Σχεδιάστε τη δομη του κώδικα με βάση τισ κλάσεις που θα απαρτίσουν το εργο : 
+
+public class Unilink{
+	public static void main(String[] args) {
+	}
+}
+public class Account{
+	public void username() {
+	}
+	public void code() {
+	}
+	public void department() {
+	}
+	public String getusername() {
+	}
+	public String getcode() {
+	}
+	public String getdepartment() {
+	}
+	public void setusername() {
+	}
+	public void setcode() {
+	}
+	public void setdepartment() {
+	}
+}
+public class Message{
+	public  time() {
+	}
+	public who() {
+	}
+	public likes() {
+	}
+}
+public class Login{
+}
+public class Signin{
+	public void password() {
+	}
+	public void username() {
+	}
+	public void cheek() {
+	}
+}
+public class Logout{
+}
