@@ -1,5 +1,3 @@
-import java.awt.FlowLayout;
-import javax.swing.JFrame;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -14,11 +12,13 @@ public class MenuFrame extends JFrame implements ActionListener{
 	JButton categoryNightlife = new JButton("NIGHTLIFE");
 	JButton categoryTravel = new JButton("TRAVEL");
 	JButton categoryFood = new JButton("FOOD");
-	String uni[]={"UNIVERSITY (OTHER)","AUEB","UOA","NTUA","UNIPI"};
+	String uni[]={"UNIVERSITY  (OTHER)","AUEB","UOA","NTUA","UNIPI"};
 	JComboBox categoryUniversity =new JComboBox(uni);
 	JButton backButton = new JButton("BACK");
+	String username;
 
-	public MenuFrame() {
+	public MenuFrame(String username) {
+		this.username=username;
 		initComponents();
 	}
 
@@ -80,7 +80,7 @@ public class MenuFrame extends JFrame implements ActionListener{
 			 dispose();
 		}
 		if (e.getSource() == categoryGeneral || e.getSource() == categoryVolunteer || e.getSource() == categoryNightlife || e.getSource() == categoryTravel || e.getSource() == categoryFood || e.getSource() == categoryUniversity) {
-			new ChatFrame();
+			new ChatFrame(username);
 			dispose();
 		}
 	}

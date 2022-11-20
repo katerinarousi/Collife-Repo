@@ -1,22 +1,27 @@
-import java.awt.FlowLayout;
-import javax.swing.JFrame;
+//TODO o kataskevastis prepei na dexetai kai tin katigoria
+
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.*;
+import java.util.ArrayList; // import the ArrayList class
+
 
 public class ChatFrame extends JFrame implements ActionListener{
 
-	JLabel chatMess =new JLabel("WRITE YOUR IDEAS IN CATEGORY:" );
+	JLabel chatMess =new JLabel("YOU ARE WRITING IN CATEGORY:" );
 	JLabel prevMess =new JLabel("PREVIOUS MESSAGES" );
 	Container container = getContentPane();
 	JButton sentButton = new JButton("SENT");
 	JTextArea textArea= new JTextArea(" Type your message here!");
 	JButton backButton = new JButton("BACK");
 	JTextPane showMess = new JTextPane();
+	ArrayList<String> messages = new ArrayList<String>();
+	JScrollPane jsp = new JScrollPane(showMess);
+	String username;
 
-	public ChatFrame() {
+
+	public ChatFrame(String username) {
+		this.username=username;
 		initComponents();
 	}
 
@@ -31,14 +36,16 @@ public class ChatFrame extends JFrame implements ActionListener{
 		setLocationAndSize();
 		addComponentsToContainer();
 	    addActionEvent();
-	    chatMess.setFont(new java.awt.Font("Tahoma", 0, 16));
+	    chatMess.setFont(new java.awt.Font("Tahoma", 0, 12));
 	    container.setBackground(new Color(204,204,255));
-	    //showMess.setBackground(new Color(204,204,255));
+	    showMess.setBackground(new Color(204,204,255));
 	    showMess.setEditable(false);
 	    textArea.setLineWrap(true);
 		textArea.setWrapStyleWord(true);
 		//showMess.setLineWrap(true);
 		//showMess.setWrapStyleWord(true);
+		//showMess.getDocument().putProperty(DefaultEditorKit.EndOfLineStringProperty, "\n");
+
     }
 
 	public void setLayoutManager() {
@@ -75,10 +82,19 @@ public class ChatFrame extends JFrame implements ActionListener{
 
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == backButton) {
-			 new MenuFrame();
+			 new MenuFrame(username);
 			 dispose();
 		}
-		if (e.getSource() == sentButton)
-			showMess.setText(": " + textArea.getText());
+		if (e.getSource() == sentButton) {
+			if( messages.isEmpty()){
+				messages.add("  "+ username + ": " + textArea.getText()+ "\n");
+			}else {
+				messages.add( " "+username +": "+ textArea.getText()+ "\n");
+			}
+			showMess.setText(messages.toString().replaceAll("[\\[\\]//,]", ""));
+			textArea.setText("");
+		}
 	}
+
+
 }

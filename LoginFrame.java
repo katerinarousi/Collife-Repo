@@ -1,7 +1,5 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.*;
 
 public class LoginFrame extends JFrame implements ActionListener {
@@ -88,11 +86,11 @@ public class LoginFrame extends JFrame implements ActionListener {
             userText = userTextField.getText();
             pwdText = passwordField.getText();
             if (userText.equalsIgnoreCase("foibos") && pwdText.equalsIgnoreCase("123")) {
-				new MenuFrame();
+				new MenuFrame(userTextField.getText());
                 dispose();
                 //JOptionPane.showMessageDialog(this, "Login Successful");
             } else {
-                JOptionPane.showMessageDialog(this, "Invalid Username or Password");
+                JOptionPane.showMessageDialog(this, "Invalid Username or Password. Try again!");
             }
         }
         //Coding Part of SIGN IN button
