@@ -97,6 +97,22 @@ public class LoginFrame extends JFrame implements ActionListener {
         if (e.getSource() == signinButton) {
             userTextField.setText("");
             passwordField.setText("");
+		/*if (e.getSource() == signinButton) {
+            userTextField.setText("");
+            passwordField.setText("");
+
+            userText = userTextField.getText();
+
+			boolean a;
+            SigninE obj = new SigninE();
+
+            do{
+				pwdText = passwordField.getText();
+				a = obj.isStrong(pwdText);
+
+			} while ( a==false);
+
+        }*/
         }
        //Coding Part of showPassword JCheckBox
         if (e.getSource() == showPassword) {
