@@ -18,9 +18,10 @@ public class ChatFrame extends JFrame implements ActionListener{
 	JButton backButton = new JButton("BACK");
 	JTextPane showMess = new JTextPane();
 	ArrayList<String> messages = new ArrayList<String>();
-	JScrollPane jsp = new JScrollPane(showMess, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+	JScrollPane jsp = new JScrollPane(showMess, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 	JScrollPane scroll = new JScrollPane(textArea, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 	String username;
+	ArrayList<String> nameOfButtonLike = new ArrayList<String>();
 
 
 
@@ -96,10 +97,13 @@ public class ChatFrame extends JFrame implements ActionListener{
 	}
 
 	public void actionPerformed(ActionEvent e) {
+		int count=0;
+
 		if (e.getSource() == backButton) {
 			 new MenuFrame(username);
 			 dispose();
 		}
+
 		if (e.getSource() == sentButton) {
 			if( messages.isEmpty()){
 				messages.add("  "+ username + ": " + textArea.getText()+ "\n");
@@ -108,6 +112,18 @@ public class ChatFrame extends JFrame implements ActionListener{
 			}
 			showMess.setText(messages.toString().replaceAll("[\\[\\]//,]", ""));
 			textArea.setText("");
+
+
+
+
+
+			/*count++;
+			nameOfButtonLike.add("likeButton" + count);
+			String bLike=nameOfButtonLike.get(count);
+			JButton bLike = new JButton("like");
+			container.add(bLike);
+			bLike.setBounds(25, 155+count*5, 300, 210); */
+
 
 		}
 	}

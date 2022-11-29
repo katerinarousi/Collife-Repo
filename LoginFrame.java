@@ -4,6 +4,7 @@ import java.awt.event.*;
 
 public class LoginFrame extends JFrame implements ActionListener {
 
+
 	JFrame frm = new JFrame("COLLIFE");
 	JLabel welcomeMess =new JLabel("WELCOME TO COLLIFE :)");
     Container container = getContentPane();
@@ -63,6 +64,7 @@ public class LoginFrame extends JFrame implements ActionListener {
         container.add(loginButton);
         container.add(signinButton);
         container.add(picLabel);
+
     }
 
     public void addActionEvent() {
