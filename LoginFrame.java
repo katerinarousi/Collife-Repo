@@ -50,7 +50,7 @@ public class LoginFrame extends JFrame implements ActionListener {
         loginButton.setBounds(50, 300, 100, 30);
         signinButton.setBounds(200, 300, 100, 30);
         welcomeMess.setBounds(90,50, 200,150);
-        picLabel.setBounds(110,10, 150,90);
+        picLabel.setBounds(90,10, 150,90);
     }
 
     public void addComponentsToContainer() {
@@ -97,22 +97,6 @@ public class LoginFrame extends JFrame implements ActionListener {
         if (e.getSource() == signinButton) {
             userTextField.setText("");
             passwordField.setText("");
-		/*if (e.getSource() == signinButton) {
-            userTextField.setText("");
-            passwordField.setText("");
-
-            userText = userTextField.getText();
-
-			boolean a;
-            SigninE obj = new SigninE();
-
-            do{
-				pwdText = passwordField.getText();
-				a = obj.isStrong(pwdText);
-
-			} while ( a==false);
-
-        }*/
         }
        //Coding Part of showPassword JCheckBox
         if (e.getSource() == showPassword) {

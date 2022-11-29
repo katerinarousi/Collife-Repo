@@ -15,6 +15,8 @@ public class MenuFrame extends JFrame implements ActionListener{
 	String uni[]={"UNIVERSITY  (OTHER)","AUEB","UOA","NTUA","UNIPI"};
 	JComboBox categoryUniversity =new JComboBox(uni);
 	JButton backButton = new JButton("BACK");
+	JLabel picLabel = new JLabel(new ImageIcon("collige_logo.png"));
+
 	String username;
 
 	public MenuFrame(String username) {
@@ -35,6 +37,7 @@ public class MenuFrame extends JFrame implements ActionListener{
     	addActionEvent();
     	menuMess.setFont(new java.awt.Font("Tahoma", 0, 16));
     	container.setBackground(new Color(204,204,255));
+
     }
 
 	public void setLayoutManager() {
@@ -49,7 +52,8 @@ public class MenuFrame extends JFrame implements ActionListener{
 		categoryTravel.setBounds(100, 300, 150, 30);
 	 	categoryFood.setBounds(100, 350, 150, 30);
 	 	categoryUniversity.setBounds(100, 400, 150, 30);
-	 	backButton.setBounds(250,500,90,30);
+	 	backButton.setBounds(250,470,80,30);
+	 	picLabel.setBounds(90,10, 150,90);
 	}
 
 	public void addComponentsToContainer() {
@@ -61,6 +65,7 @@ public class MenuFrame extends JFrame implements ActionListener{
 		container.add(categoryFood);
 		container.add(categoryUniversity);
 		container.add(backButton);
+		container.add(picLabel);
 	}
 
 	public void addActionEvent() {
@@ -79,9 +84,23 @@ public class MenuFrame extends JFrame implements ActionListener{
 			 new LoginFrame();
 			 dispose();
 		}
-		if (e.getSource() == categoryGeneral || e.getSource() == categoryVolunteer || e.getSource() == categoryNightlife || e.getSource() == categoryTravel || e.getSource() == categoryFood || e.getSource() == categoryUniversity) {
-			new ChatFrame(username);
-			dispose();
+
+		if (e.getSource()==categoryGeneral) {
+			new ChatFrame(username, "GENERAL");
+		} else if (e.getSource()==categoryVolunteer) {
+			new ChatFrame(username, "VOLUNTEER");
+		} else if (e.getSource()==categoryNightlife) {
+				new ChatFrame(username, "NIGHTLIFE");
+		} else if (e.getSource()==categoryTravel) {
+				new ChatFrame(username, "TRAVEL");
+		} else if (e.getSource()==categoryFood) {
+				new ChatFrame(username, "FOOD");
+		} else if (e.getSource()==categoryUniversity) {
+				new ChatFrame(username, "UNIVERSITY");
 		}
+			dispose();
+
+
+
 	}
 }
