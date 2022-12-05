@@ -26,21 +26,28 @@ public class LoginFrame extends JFrame implements ActionListener {
 		setBounds(10, 10, 370, 600);
 		setLocationRelativeTo(null); // center the application window
 		setVisible(true);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		//setIconImage(new Image());
-        setResizable(true);
         setLayoutManager();
         setLocationAndSize();
         addComponentsToContainer();
         addActionEvent();
-		container.setBackground(new Color(204,204,255));
-		showPassword.setBackground(new Color(204, 204, 255));
-        welcomeMess.setFont(new Font("Tahoma", 0, 16));
+		setBackground();
+        setFont();
         }
 
     public void setLayoutManager() {
 	    container.setLayout(null);
     }
+
+
+    private void setBackground(){
+		container.setBackground(new Color(204,204,255));
+		showPassword.setBackground(new Color(204, 204, 255));
+	}
+
+    private void setFont(){
+		welcomeMess.setFont(new Font("Tahoma", 0, 16));
+
+	}
 
     public void setLocationAndSize() {
         userLabel.setBounds(50, 150, 100, 30);
@@ -51,7 +58,7 @@ public class LoginFrame extends JFrame implements ActionListener {
         loginButton.setBounds(50, 300, 100, 30);
         signinButton.setBounds(200, 300, 100, 30);
         welcomeMess.setBounds(90,50, 200,150);
-        picLabel.setBounds(90,10, 150,90);
+        picLabel.setBounds(100,10, 150,90);
     }
 
     public void addComponentsToContainer() {

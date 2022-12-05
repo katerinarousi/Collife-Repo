@@ -28,21 +28,28 @@ public class MenuFrame extends JFrame implements ActionListener{
 		setTitle("Collife");
 		setVisible(true);
 		setBounds(10, 10, 370, 600);
-		setLocationRelativeTo(null);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    	setResizable(true);
+		setLocationRelativeTo(null);// center the application window
 		setLayoutManager();
 		setLocationAndSize();
 		addComponentsToContainer();
     	addActionEvent();
-    	menuMess.setFont(new java.awt.Font("Tahoma", 0, 16));
-    	container.setBackground(new Color(204,204,255));
+    	setFont();
+    	setBackground();
 
     }
 
 	public void setLayoutManager() {
         container.setLayout(null);
     }
+
+
+    private void setFont(){
+    	menuMess.setFont(new java.awt.Font("Tahoma", 0, 16));
+	}
+
+	private void setBackground(){
+		container.setBackground(new Color(204,204,255));
+	}
 
 	public void setLocationAndSize() {
 		menuMess.setBounds(100,50, 200,150);
@@ -52,8 +59,8 @@ public class MenuFrame extends JFrame implements ActionListener{
 		categoryTravel.setBounds(100, 300, 150, 30);
 	 	categoryFood.setBounds(100, 350, 150, 30);
 	 	categoryUniversity.setBounds(100, 400, 150, 30);
-	 	backButton.setBounds(250,470,80,30);
-	 	picLabel.setBounds(90,10, 150,90);
+	 	backButton.setBounds(250,490,80,30);
+	 	picLabel.setBounds(100,10, 150,90);
 	}
 
 	public void addComponentsToContainer() {
@@ -69,7 +76,6 @@ public class MenuFrame extends JFrame implements ActionListener{
 	}
 
 	public void addActionEvent() {
-		//categoryUniversity.addActionListener(this);
 	 	backButton.addActionListener(this);
 	 	categoryGeneral.addActionListener(this);
 	 	categoryVolunteer.addActionListener(this);

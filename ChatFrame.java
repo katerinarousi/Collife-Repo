@@ -14,6 +14,7 @@ public class ChatFrame extends JFrame implements ActionListener{
 	JLabel prevMess =new JLabel("PREVIOUS MESSAGES" );
 	Container container = getContentPane();
 	JButton sentButton = new JButton("SENT");
+	JButton   likeMessButton = new JButton  ("I like the message ");
 	JTextArea textArea= new JTextArea(" Type your message here!");
 	JButton backButton = new JButton("BACK");
 	JTextPane showMess = new JTextPane();
@@ -22,6 +23,7 @@ public class ChatFrame extends JFrame implements ActionListener{
 	JScrollPane scroll = new JScrollPane(textArea, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 	String username;
 	ArrayList<String> nameOfButtonLike = new ArrayList<String>();
+	int count=1;
 
 
 
@@ -35,42 +37,44 @@ public class ChatFrame extends JFrame implements ActionListener{
 		setTitle("Collife");
 		setVisible(true);
 		setBounds(10, 10, 370, 600);
-		setLocationRelativeTo(null);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	    setResizable(true);
+		setLocationRelativeTo(null);// center the application window
 		setLayoutManager();
 		setLocationAndSize();
 		addComponentsToContainer();
 	    addActionEvent();
-	    chatMess1.setFont(new java.awt.Font("Tahoma", 0, 16));
-	    chatMess2.setFont(new java.awt.Font("Tahoma", 0, 16));
-	    container.setBackground(new Color(204,204,255));
-	    showMess.setBackground(new Color(204,204,255));
-	    textArea.setBackground(new Color(204,204,255));
+	    setFont();
 	    showMess.setEditable(false);
-
-	    chatMess2.setText("IN CATEGORY: " + category);
-
-	    //textArea.setLineWrap(true);
-		//textArea.setWrapStyleWord(true);
-		//showMess.setLineWrap(true);
-		//showMess.setWrapStyleWord(true);
-		//scroll.getDocument().putProperty(DefaultEditorKit.EndOfLineStringProperty, "\n");
-
+		chatMess2.setText("IN CATEGORY: " + category);
+		setBackground();
     }
+
+
+     private void setFont(){
+		 chatMess1.setFont(new java.awt.Font("Tahoma", 0, 16));
+	     chatMess2.setFont(new java.awt.Font("Tahoma", 0, 16));
+
+	}
+
+    private void setBackground(){
+		container.setBackground(new Color(204,204,255));
+		showMess.setBackground(new Color(204,204,255));
+		textArea.setBackground(new Color(204,204,255));
+		//likeMessButton.setBackground(new Color(204,204,255));
+	}
 
 	public void setLayoutManager() {
         container.setLayout(null);
     }
 
 	public void setLocationAndSize() {
-		chatMess1.setBounds(75,-20, 300,150);
+		chatMess1.setBounds(100,-20, 300,150);
 		chatMess2.setBounds(75,10, 300,150);
 	 	sentButton.setBounds(250, 410, 80, 30);
-	 	backButton.setBounds(250,470,80,30);
+	 	backButton.setBounds(250,490,80,30);
 	 	prevMess.setBounds(100, 65, 240, 150);
 	 	jsp.setBounds(25, 155, 300, 210);
-	 	scroll.setBounds(25, 400, 200,100);
+	 	scroll.setBounds(25, 400, 200,50);
+	 	likeMessButton.setBounds(25, 455, 200,20);
 	}
 
 	public void addComponentsToContainer() {
@@ -81,6 +85,7 @@ public class ChatFrame extends JFrame implements ActionListener{
 		container.add(scroll);
 		container.add(prevMess);
 		container.add(jsp);
+		container.add(likeMessButton);
 
 	}
 
@@ -94,10 +99,13 @@ public class ChatFrame extends JFrame implements ActionListener{
 		});
 		sentButton.addActionListener(this);
 	 	backButton.addActionListener(this);
+	 	likeMessButton.addActionListener(this);
+
 	}
 
+
+
 	public void actionPerformed(ActionEvent e) {
-		int count=0;
 
 		if (e.getSource() == backButton) {
 			 new MenuFrame(username);
@@ -106,26 +114,21 @@ public class ChatFrame extends JFrame implements ActionListener{
 
 		if (e.getSource() == sentButton) {
 			if( messages.isEmpty()){
-				messages.add("  "+ username + ": " + textArea.getText()+ "\n");
-			}else {
-				messages.add( " "+username +": "+ textArea.getText()+ "\n");
+				messages.add(" "+ count +")  "+ username + ": " + textArea.getText()+ "\n");
+				count++;
+			} else {
+				messages.add(count +")  "+username +": "+ textArea.getText()+ "\n");
+				count++;
 			}
 			showMess.setText(messages.toString().replaceAll("[\\[\\]//,]", ""));
 			textArea.setText("");
-
-
-
-
-
-			/*count++;
-			nameOfButtonLike.add("likeButton" + count);
-			String bLike=nameOfButtonLike.get(count);
-			JButton bLike = new JButton("like");
-			container.add(bLike);
-			bLike.setBounds(25, 155+count*5, 300, 210); */
-
-
 		}
+
+		if (e.getSource() == likeMessButton) {
+			textArea.setText("I like the message ");
+		}
+
+
 	}
 
 
