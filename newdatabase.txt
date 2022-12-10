@@ -1,0 +1,24 @@
+DROP TABLE Likes ;
+DROP TABLE Message;
+DROP TABLE Users;
+
+CREATE TABLE Users(
+	username varchar(15) NOT NULL PRIMARY KEY,
+	password int NOT NULL )
+
+CREATE TABLE Message(
+	msg_id int NOT NULL PRIMARY KEY ,
+	username varchar(15) NOT NULL FOREIGN KEY references Users ,
+	description varchar(30) 
+        category_id int NOT NULL);
+
+CREATE TABLE Likes( 
+	like_id int NOT NULL PRIMARY KEY ,
+	username varchar(15) NOT NULL foreign key references Account,
+	msg_id int NOT NULL foreign key references Message);
+
+
+
+
+
+
