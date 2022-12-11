@@ -2,21 +2,20 @@ package collifePckg;
 
 public class User {
 	
-	//q: τα username, password και dept τα λαμβάνει μέσω αντικειμένου από τις κλάσεις login/signin 
-	//ή τα ορίζω εξαρχής ως ξεχωριστά πεδία όπως παρακάτω?
+	//q: Γ΄Γ΅ username, password ΓªΓ΅Γ© dept Γ΄Γ΅ Γ«Γ΅Γ¬ΓΆΓΓ­Γ¥Γ© Γ¬ΓΓ³ΓΉ Γ΅Γ­Γ΄Γ©ΓªΓ¥Γ©Γ¬ΓΓ­Γ―Γµ Γ΅Γ°ΓΌ Γ΄Γ©Γ² ΓªΓ«ΓΓ³Γ¥Γ©Γ² login/signin 
+	//Γ Γ΄Γ΅ Γ―Γ±ΓΓ¦ΓΉ Γ¥Γ®Γ΅Γ±Γ·ΓΓ² ΓΉΓ² Γ®Γ¥Γ·ΓΉΓ±Γ©Γ³Γ΄Γ Γ°Γ¥Γ¤ΓΓ΅ ΓΌΓ°ΓΉΓ² Γ°Γ΅Γ±Γ΅ΓªΓΓ΄ΓΉ?
 	
 	private String username;
 	private String password;
-	private String dept;
+	private String uni;
 	
 	public User(String username, String password, String dept) {
 		
 		this.username = username;
 		this.password = password;
-		this.dept = dept;
 	}
 	
-	public User() { //κατασκευαστής χωρίς ορίσματα σε πρίπτωση που χρειαστεί
+	public User() { 
 		
 	}
 	
@@ -30,8 +29,8 @@ public class User {
 		this.password = password;
 	}
 	
-	public void setDept(String dept) {
-		this.dept = dept;
+	public void setUni(String uni) {
+		this.uni = uni;
 	}
 	
 	public String getUsername() {
@@ -42,9 +41,10 @@ public class User {
 		return password;
 	}
 	
-	public String getDept() {
-		return dept;
+	public String getUni() {
+		return uni;
 	}
+	
 	
 	
 	
