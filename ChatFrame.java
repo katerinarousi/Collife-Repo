@@ -6,9 +6,6 @@ import java.util.ArrayList; // import the ArrayList class
 
 public class ChatFrame extends JFrame implements ActionListener{
 
-	Connection con = null;
-	PreparedStatement pst = null;
-	ResultSet rs = null;
 
 
 
@@ -35,8 +32,6 @@ public class ChatFrame extends JFrame implements ActionListener{
 		this.username=username;
 		this.category=category;
 		initComponents();
-		//connection with db
-		con = SQLiteConnection.ConnectDb();
 	}
 
 	private void initComponents() {
@@ -109,27 +104,20 @@ public class ChatFrame extends JFrame implements ActionListener{
 
 	}
 
-
-
+    //message db
+    Message my_message = new Message();
 	public void actionPerformed(ActionEvent e) {
+
+
 
 		if (e.getSource() == backButton) {
 			 new MenuFrame(username);
 			 dispose();
 		}
 
-
-        //;;;; DB
-
-        Message mymes = new Message();
-
 		if (e.getSource() == sentButton) {
 			if( messages.isEmpty()){
 				messages.add(" "+ count +")  "+ username + ": " + textArea.getText()+ "\n");
-
-				//bd
-				//πρεπει με καποιο τροπο το id και text
-				mymes.InsertMess(id, username, string text ,category );
 				count++;
 			} else {
 				messages.add(count +")  "+username +": "+ textArea.getText()+ "\n");
@@ -137,23 +125,18 @@ public class ChatFrame extends JFrame implements ActionListener{
 			}
 			showMess.setText(messages.toString().replaceAll("[\\[\\]//,]", ""));
 			textArea.setText("");
+
+
+			//data base
+			String id = my_message.getID(count, category);
+			String des = my_message.getMessage(messages);
+			my_message.insertMessage(id, username, des, category);
 		}
 
 		if (e.getSource() == likeMessButton) {
 
-			String sql = "INSERT INTO Likes(username,msg_id) VALUES (?,?)";
-			try {
-				pst = con.prepareStatement(sql);
-			    pst.setString(1,//add username user.TextField.getText()
-			    pst.setString(2,//add msg_id
-
-			    pst.execute();
 
 		        textArea.setText("I like the message ");
-		        pst.close();
-			} catch (Exception e) {
-				System.out.println( "error");
-		    }
 
 		}
 
