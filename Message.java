@@ -8,7 +8,8 @@ import java.util.ArrayList;
 
 public class Message {
 
-	private String url = "C:\\Users\\paras\\eclipse-workspace\\SQLiteConnection\\cc_db.db\\";
+	Connection connection = null;
+	PreparedStatement state = null;
 
     public String getMessage(ArrayList<String> i) {
 		return i.get(i.size());
@@ -49,8 +50,8 @@ public class Message {
 		String insertSql = "INSERT INTO Message (msg_id,username,description,category_id) VALUES ( " + id + " ," + name + "," + des + "," + category + ");";
 	    ResultSet resultSet = null;
 	    try {
-		  Connection connection = DriverManager.getConnection(url);
-		  PreparedStatement state =connection.prepareStatement(insertSql);
+		  connection = SQLiteConnection.ConnectDb();
+		  state =connection.prepareStatement(insertSql);
 
 		  state.execute();
 
