@@ -56,7 +56,7 @@ public class MenuBar extends JMenuBar implements ActionListener {
                     "Select a colour for background",
                     "Background colour", JOptionPane.QUESTION_MESSAGE,
                     null, new String[] { "Red","Orange", "Yellow","Green","Blue","Purple (Default)" },"Purple (Default)");
-					dispose();
+
             if (answer=="Red"){
 
 				LoginFrame log= new LoginFrame();
@@ -64,7 +64,7 @@ public class MenuBar extends JMenuBar implements ActionListener {
             	log.showPassword.setBackground(new Color(253, 104, 104, 220));
             	MenuBar mb1 = new MenuBar(log);
             } else if (answer=="Purple (Default)") {
-				// dispose();
+
 				LoginFrame log= new LoginFrame();
 
             	log.container.setBackground(new Color(204,204,255));

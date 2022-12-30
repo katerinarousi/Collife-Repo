@@ -2,11 +2,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class LoginFrame extends JFrame implements ActionListener {
+public class LoginFrame extends JFrame implements ActionListener{
+    JFrame frm = new JFrame("COLLIFE");
 
-
-	JFrame frm = new JFrame("COLLIFE");
-	JLabel welcomeMess =new JLabel("WELCOME TO COLLIFE :)");
+    JLabel welcomeMess =new JLabel("WELCOME TO COLLIFE :)");
     Container container = getContentPane();
     JLabel userLabel = new JLabel("USERNAME:");
     JLabel passwordLabel = new JLabel("PASSWORD:");
@@ -15,39 +14,43 @@ public class LoginFrame extends JFrame implements ActionListener {
     JButton loginButton = new JButton("LOGIN");
     JButton signinButton = new JButton("SIGN UP");
     JCheckBox showPassword = new JCheckBox("Show Password");
-	JLabel picLabel = new JLabel(new ImageIcon("collige_logo.png"));
+    JLabel picLabel = new JLabel(new ImageIcon("collige_logo.png"));
+    JMenuBar mb=new JMenuBar();
+
 
     LoginFrame() {
-		initComponents();
+        initComponents();
     }
 
-     private void initComponents() {
-		setTitle("Collife");
-		setBounds(10, 10, 370, 600);
-		setLocationRelativeTo(null); // center the application window
-		setVisible(true);
+    private void initComponents() {
+        setTitle("Collife");
+        setBounds(10, 10, 370, 600);
+        frm.setJMenuBar(mb);
+
+        setLocationRelativeTo(null); // center the application window
+        setVisible(true);
         setLayoutManager();
         setLocationAndSize();
         addComponentsToContainer();
         addActionEvent();
-		setBackground();
+        setBackground(204,204,255);
         setFont();
-        }
-
-    public void setLayoutManager() {
-	    container.setLayout(null);
     }
 
+    public void setLayoutManager() {
+        container.setLayout(null);
+    }
 
-    private void setBackground(){
-		container.setBackground(new Color(204,204,255));
-		showPassword.setBackground(new Color(204, 204, 255));
-	}
+//this method
+    private void setBackground(int a, int b, int c){
+        container.setBackground(new Color(a,b,c));
+        showPassword.setBackground(new Color(a, b, c));
+    }
 
     private void setFont(){
-		welcomeMess.setFont(new Font("Tahoma", 0, 16));
+        welcomeMess.setFont(new Font("Tahoma", 0, 16));
 
-	}
+    }
 
     public void setLocationAndSize() {
         userLabel.setBounds(50, 150, 100, 30);
@@ -72,6 +75,7 @@ public class LoginFrame extends JFrame implements ActionListener {
         container.add(signinButton);
         container.add(picLabel);
 
+
     }
 
     public void addActionEvent() {
@@ -79,10 +83,10 @@ public class LoginFrame extends JFrame implements ActionListener {
         signinButton.addActionListener(this);
         showPassword.addActionListener(this);
         userTextField .addMouseListener(new MouseAdapter() {
-		public void mouseClicked(MouseEvent evt) {
-		userTextField .setText("");
-		}
-		});
+            public void mouseClicked(MouseEvent evt) {
+                userTextField .setText("");
+            }
+        });
     }
 
 
@@ -95,7 +99,8 @@ public class LoginFrame extends JFrame implements ActionListener {
             userText = userTextField.getText();
             pwdText = passwordField.getText();
             if (userText.equalsIgnoreCase("foibos") && pwdText.equalsIgnoreCase("123")) {
-				new MenuFrame(userTextField.getText());
+                //new MenuFrame(userTextField.getText());
+                new MenuBar(new MenuFrame(userTextField.getText()));
                 dispose();
                 //JOptionPane.showMessageDialog(this, "Login Successful");
             } else {
@@ -107,13 +112,13 @@ public class LoginFrame extends JFrame implements ActionListener {
             userTextField.setText("");
             passwordField.setText("");
         }
-       //Coding Part of showPassword JCheckBox
+        //Coding Part of showPassword JCheckBox
         if (e.getSource() == showPassword) {
             if (showPassword.isSelected()) {
                 passwordField.setEchoChar((char) 0);
             } else {
                 passwordField.setEchoChar('*');
             }
-    	}
-	}
+        }
+    }
 }
