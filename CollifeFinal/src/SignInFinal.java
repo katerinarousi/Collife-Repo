@@ -13,6 +13,10 @@ import javax.swing.JTextField;
 		ResultSet rs = null;
 
     public SignInFinal() {
+	    
+    // create database object 
+	    
+	    
     	conn = SQLiteConnectionB.ConnectDb();
     }
 
@@ -24,24 +28,39 @@ import javax.swing.JTextField;
     		pst = conn.prepareStatement(sql);
     		pst.setString(1, userTextField.getText());
     		pst.setString(2, passwordField.getText());
-    	
+        	
+    	  
+		try {	
     		pst.execute();
     		System.out.println("inserted into users");
-  // CHECK IF USERNAME ALREADY EXISTS //        	
-    	   /* if (CheckU.CheckIfExists(userTextField.getText()) == true) {
-    		    JOptionPane.showMessageDialog(null, "Username already exists! Try again!");	
-    	    }  */      	
-  // VALIDATE USERNAME USING REGULAR EXPRESSION //	
+			
+			
+  // Check if username already exists  
+			
+			
+    	        CheckUsernameExists.CheckIfExists(userTextField.getText());
+                     	
+                } catch (NullPointerException e1) {
+        	
+                } catch (SQLiteException e2) {
+   		    JOptionPane.showMessageDialog(null, "Username already exists.Try again.");
+   		    
+   		 		   
+                }
+		
+  // Validate username with regular expression	
     	
     	
+    		
     		if (userTextField.getText() != null) {
     			if (ValidateFinal.isValidUsername(userTextField.getText()) == false) {
-    				JOptionPane.showMessageDialog(null, "Username invalid");
+    				JOptionPane.showMessageDialog(null, "Username invalid. \n Must consist of 6 to 30 characters inclusive. \n It can only contain alphanumeric characters and underscores (_).\n"
+          	+ "The first character of the username must be an alphabetic character, i.e., either lowercase character\r\n"
+          	+ "[a – z] or uppercase character [A – Z].");
     			}            	
     		}
     	
-    		JOptionPane.showMessageDialog(null, "Registration successfull");
-    	
+    		
     	
     		pst.close();
     		
