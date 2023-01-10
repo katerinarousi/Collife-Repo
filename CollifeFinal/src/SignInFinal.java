@@ -7,19 +7,24 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 	public class SignInFinal {
-
+                // initialize connection object
 		Connection conn = null;
+		
+                // initialize PreparedStatement onject
 		PreparedStatement pst = null;
+		
+		// initialize ResultSet object
 		ResultSet rs = null;
 
     public SignInFinal() {
 	    
-    // create database object 
-	    
-	    
+        // create database object 	    
     	conn = SQLiteConnectionB.ConnectDb();
     }
-
+    
+    //** method that accepts the username and the password 
+       and signs in the user **//
+	       
     public void signTheUser(JTextField userTextField, JPasswordField passwordField ) {
 	
     	String sql = "INSERT INTO Users(username,password) VALUES (?,?)";
