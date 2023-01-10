@@ -22,8 +22,8 @@ import javax.swing.JTextField;
     	conn = SQLiteConnectionB.ConnectDb();
     }
     
-    //** method that accepts the username and the password 
-       and signs in the user **//
+    /* method that accepts the username and the password 
+     * and signs in the user */
 	       
     public void signTheUser(JTextField userTextField, JPasswordField passwordField ) {
 	
@@ -35,12 +35,13 @@ import javax.swing.JTextField;
     		pst.setString(2, passwordField.getText());
         	
     	  
-		try {	
+		try {
+		// executes the pst
     		pst.execute();
     		System.out.println("inserted into users");
 			
 			
-  // Check if username already exists  
+                // Check if username already exists  
 			
 			
     	        CheckUsernameExists.CheckIfExists(userTextField.getText());
@@ -53,12 +54,12 @@ import javax.swing.JTextField;
    		 		   
                 }
 		
-  // Validate username with regular expression	
-    	
-    	
-    		
+                // Validate username with regular expression	
+    	  		
     		if (userTextField.getText() != null) {
     			if (ValidateFinal.isValidUsername(userTextField.getText()) == false) {
+				
+		// Message with the correct way to write the username correct
     				JOptionPane.showMessageDialog(null, "Username invalid. \n Must consist of 6 to 30 characters inclusive. \n It can only contain alphanumeric characters and underscores (_).\n"
           	+ "The first character of the username must be an alphabetic character, i.e., either lowercase character\r\n"
           	+ "[a – z] or uppercase character [A – Z].");
@@ -66,7 +67,7 @@ import javax.swing.JTextField;
     		}
     	
     		
-    	
+    	        // Close the connection
     		pst.close();
     		
     	
@@ -75,6 +76,8 @@ import javax.swing.JTextField;
     		System.out.println("Registration NOT");
     	
     	}
+	// Sets the TextFiled back to blank
+	    
     	userTextField.setText("");
     	passwordField.setText("");
     
