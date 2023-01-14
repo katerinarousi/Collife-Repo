@@ -2,7 +2,7 @@
 
 *Collife* allows its user to join a unique community of students all over the country, share their thoughts and communicate with one another.
 
-## Compile
+## Compile the code
 To compile the Java program from the source code run *mvn* on the *pom.xml* file.
 If you change the source code, you can run tests by executing *mvn install* on the *maven* project.
 
@@ -14,11 +14,7 @@ To run the program from the source code, first you please include the .png file 
 Also, include the .db database file *cc_db.db* on the source code.
 
 ## Contents of repository
-
-This repository inclus th
-
-
-
+This repository includes this README file that 
 
 
 
