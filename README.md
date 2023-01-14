@@ -6,6 +6,11 @@ To compile the Java program from the source code run *mvn* on the *pom.xml* file
 If you change the source code, you can run tests by executing *mvn install* on the *maven* project.
 
 The app is compatible with the latest version of Java 19. 
-In order to run it from the jar file run *java -jar .............* 
+In order to run the program from the jar file run *java -jar .............* 
+
+To run the program from the source code, first you please include the .png file *collife_logo.png* on the source code.
+Also, include the database file *cc_db.db* on the source code
+
+
 
 
