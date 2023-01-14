@@ -10,11 +10,11 @@ If you change the source code, you can run tests by executing *mvn install* on t
 The app is compatible with the latest version of Java 19. 
 In order to run the program from the jar file run *java -jar .............* 
 
-To run the program from the source code, first you please include the .png file *collife_logo.png* on the source code.
+To run the program from the source code, first please include the .png file *collife_logo.png* on the source code.
 Also, include the .db database file *cc_db.db* on the source code.
 
 ## Contents of repository
-This repository includes this README file that 
+This repository includes this README file, the .png file that contains the logo of our product and a file named *CollifeFinal* that represents the latest version of our code. This file includes of the *source code file* (.java files) and the *database* file.
 
 
 
