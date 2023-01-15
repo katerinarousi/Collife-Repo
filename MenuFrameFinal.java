@@ -29,7 +29,7 @@ public class MenuFrameFinal extends JFrame implements ActionListener {
   JComboBox categoryUniversity = new JComboBox(uni);
   JButton backButton = new JButton("BACK");
   JLabel picLabel = new JLabel(new ImageIcon("collige_logo.png"));
-
+ 
   String username;
 
     /**
