@@ -8,7 +8,7 @@ If you change the source code, you can run tests by executing *mvn install* on t
 
 ## Run the program
 The app is compatible with the latest version of Java 19. 
-In order to run the program from the jar file run *java -jar .............* 
+In order to run the program from the jar file run *java -jar Collife.jar* 
 
 To run the program from the source code, first please download the file *CollifeFinal* on your computer. Then include the .png file *collife_logo.png* on the file.
 Also, include the .db database file *cc_db.db* on the file (same path with the file src). Then, run the program via the main class *MainFinal*.
