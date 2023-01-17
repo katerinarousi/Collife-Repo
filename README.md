@@ -15,7 +15,7 @@ Then include the .png file *collife_logo.png* on the same path as the file.
 Also, include the .db database file *cc_db.db* on the file (same path with the file src). Then, run the program via the main class *MainFinal*.
 
 ## Contents of repository
-This repository includes this README file, the .png file that contains the logo of our product and a file named *CollifeFinal* that represents the latest version of our code. This file consists of the *source code file* (.java files) and the *database* file.
+This repository includes this README file, the .png file that contains the logo of our product and a file named *src* that represents the latest version of our code. This file also includes the database file *cc_db.db* at main/resources/cc_db.db, the *pom.xml* file that we created through maven and a .md file standing as the licence for our app.
 
 ## Data structures
 In order to store the data that our app uses to run, we created a database file (*cc_db.db*) using SQLite.
