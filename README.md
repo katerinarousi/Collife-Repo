@@ -30,6 +30,7 @@ In order to logout one can select the option *exit* on the top left corner of th
 ## UML diagram
 Below, we cite the UML diagram that describes the class structure of our project.
 
+![Model!ClassDiagram1_1](https://user-images.githubusercontent.com/115362627/212862039-dd2d8ea5-8079-4e2e-935a-f522f0d932c5.jpg)
 
 
 
