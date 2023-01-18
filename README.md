@@ -3,19 +3,24 @@
 *Collife* allows its user to join a unique community of students all over the country, share their thoughts and communicate with one another.
 
 ## Compile the code
-To compile the Java program from the source code run *mvn* on the *pom.xml* file.
-If you change the source code, you can run tests by executing *mvn install* on the *maven* project.
+To compile the Java program, you should first install the folder PushnPop from our repository to your computer.
+Then being in the specific path(../PushnPop/) run the following command at terminal:
+```
+mvn clean compile assembly:single
+```
 
 ## Run the program
 The app is compatible with the latest version of Java 19. 
-In order to run the program from the jar file run *java -jar Collife.jar* 
-
-To run the program from the source code, first please download the file *src* on your computer. 
-Then include the .png file *collife_logo.png* on the same path as the file.
-Also, include the .db database file *cc_db.db* on the file (same path with the file src). Then, run the program via the main class *MainFinal*.
+In order to run the program, you should first **include the .db database file *cc_db.db* on the same path with the file: target**
+Then, run this command at any terminal:
+```
+java -cp target/Collife-0.0.1-SNAPSHOT-jar-with-dependencies.jar PushnPop.MainFinal
+```
+Then include the .png file *collife_logo.png* on the same path as tasqkmle.
+You have successfully runned our app via the main class *MainFinal*.
 
 ## Contents of repository
-This repository includes this README file, the .png file that contains the logo of our product and a file named *src* that represents the latest version of our code. This file also includes the database file *cc_db.db* at main/resources/cc_db.db, the *pom.xml* file that we created through maven and a .md file standing as the licence for our app.
+This repository includes this README file, the .png file that contains the logo of our product and a file named *PushnPop* that represents the latest version of our code, the database file *cc_db.db*, the *pom.xml* file that we created through maven and a .md file standing as the licence for our app.
 
 ## Data structures
 In order to store the data that our app uses to run, we created a database file (*cc_db.db*) using SQLite.
