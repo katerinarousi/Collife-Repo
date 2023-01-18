@@ -3,7 +3,7 @@
 *Collife* allows its user to join a unique community of students all over the country, share their thoughts and communicate with one another.
 
 ## Compile the code
-To compile the Java program, you should first install the folder PushnPop from our repository to your computer, and also have *Maven* installed on your device.
+To compile the Java program, you should first install the folder PushnPop from our repository to your computer and also have *Maven* installed on your device.
 Then being in the specific path(../PushnPop/) run the following command at terminal:
 ```
 mvn clean compile assembly:single
@@ -11,10 +11,10 @@ mvn clean compile assembly:single
 
 ## Run the program
 The app is compatible with the latest version of Java 19. 
-In order to run the program, you should first **copy the .db database file *cc_db.db* from PushnPop/ and paste it on the file: PushnPop/target**, so it exists in both location. Also move the .png file *collife_logo.png* on PushnPop/ , so it is at the same path as src.
+In order to run the program, you should first **move the executable jar file named *Collife-0.0.1-SNAPSHOT-jar-with-dependencies.jar* from PushnPop/target to the PushnPop directory.** Also, move the .png file *collife_logo.png* on PushnPop/ , so it is at the same path as src.
 Then, run this command at any terminal:
 ```
-java -cp target/Collife-0.0.1-SNAPSHOT-jar-with-dependencies.jar PushnPop.MainFinal
+java -cp Collife-0.0.1-SNAPSHOT-jar-with-dependencies.jar PushnPop.MainFinal
 ```
 
 You have successfully runned our app via the main class *MainFinal*.
