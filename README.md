@@ -18,7 +18,7 @@ java -cp Collife-0.0.1-SNAPSHOT-jar-with-dependencies.jar PushnPop.MainFinal
 ```
 
 You have successfully runned our app via the main class *MainFinal*.
-For every next time you want to run it, you can do it either with the last command at terminal or by just double-clicking the executable jar file **Collife-0.0.1-SNAPSHOT-jar-with-dependencies.jar** (located at ../PushnPop/target/)
+For every next time you want to run it, you can do it either with the last command at terminal or by just double-clicking the executable jar file **Collife-0.0.1-SNAPSHOT-jar-with-dependencies.jar** (located at ../PushnPop/)
 
 ## Contents of repository
 This repository includes this README file, the .png file that contains the logo of our product and a file named *PushnPop* that represents the latest version of our code, the database file *cc_db.db*, the *pom.xml* file that we created through maven and a .md file standing as the licence for our app.
