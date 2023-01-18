@@ -11,7 +11,7 @@ mvn clean compile assembly:single
 
 ## Run the program
 The app is compatible with the latest version of Java 19. 
-In order to run the program, you should first **move the executable jar file named *Collife-0.0.1-SNAPSHOT-jar-with-dependencies.jar* from PushnPop/target to the PushnPop directory.** Also, move the .png file *collife_logo.png* on PushnPop/ , so it is at the same path as src.
+In order to run the program, you should first **move the executable jar file named *Collife-0.0.1-SNAPSHOT-jar-with-dependencies.jar* from PushnPop/target to the PushnPop directory.** Also, move the .png file *collife_logo.png* on PushnPop folder , so it is at the same path as src.
 Then, run this command at any terminal:
 ```
 java -cp Collife-0.0.1-SNAPSHOT-jar-with-dependencies.jar PushnPop.MainFinal
