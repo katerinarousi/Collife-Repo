@@ -3,7 +3,7 @@
 *Collife* allows its user to join a unique community of students all over the country, share their thoughts and communicate with one another.
 
 ## Compile the code
-To compile the Java program, you should first install the folder PushnPop from our repository to your computer.
+To compile the Java program, you should first install the folder PushnPop from our repository to your computer, and also have *Maven* installed on your device.
 Then being in the specific path(../PushnPop/) run the following command at terminal:
 ```
 mvn clean compile assembly:single
