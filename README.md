@@ -11,7 +11,7 @@ mvn clean compile assembly:single
 
 ## Run the program
 The app is compatible with the latest version of Java 19. 
-In order to run the program, you should first **include the .db database file *cc_db.db* on the file: target** and the .png file *collife_logo.png* on the same path as PushnPop/src.
+In order to run the program, you should first **copy the .db database file *cc_db.db* from PushnPop/ and paste it on the file: PushnPop/target**, so it exists in both location. Also move the .png file *collife_logo.png* on PushnPop/ , so it is at the same path as src.
 Then, run this command at any terminal:
 ```
 java -cp target/Collife-0.0.1-SNAPSHOT-jar-with-dependencies.jar PushnPop.MainFinal
